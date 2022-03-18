@@ -1,4 +1,8 @@
 <label class="switch">
-  <input type="checkbox" appSwitchDirective />
+  <input type="checkbox"
+         (change)="onSwitchChange($event)"
+         [ngClass]="{on: isSwitched}"
+  />
   <span class="control"></span>
 </label>
+<div class="text">{{isSwitched ? 'ON' : 'OFF' }}</div>

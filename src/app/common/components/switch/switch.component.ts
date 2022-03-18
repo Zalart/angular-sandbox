@@ -6,5 +6,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./switch.component.scss']
 })
 export class SwitchComponent {
-  constructor() { }
+public isSwitched: boolean = false;
+constructor() {}
+
+  onSwitchChange (event: Event) {
+  this.isSwitched = (<HTMLInputElement>event.currentTarget).checked;
+}
 }
