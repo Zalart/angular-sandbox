@@ -9,7 +9,11 @@ export class SwitchComponent {
 public isSwitched: boolean = false;
 constructor() {}
 
-  onSwitchChange (event: Event) {
-  this.isSwitched = (<HTMLInputElement>event.currentTarget).checked;
+  onSwitchChange (value: HTMLInputElement) {
+  this.isSwitched = value.checked;
 }
+
+  get statusLabel(): string {
+    return this.isSwitched ? 'ON' : 'OFF';
+  }
 }

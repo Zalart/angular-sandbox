@@ -1,8 +1,9 @@
 <label class="switch">
   <input type="checkbox"
-         (change)="onSwitchChange($event)"
-         [ngClass]="{on: isSwitched}"
+         #checkbox
+         (change)="onSwitchChange(checkbox)"
+         [class.on]="isSwitched"
   />
   <span class="control"></span>
 </label>
-<div class="text">{{isSwitched ? 'ON' : 'OFF' }}</div>
+<div class="text">{{statusLabel}}</div>
