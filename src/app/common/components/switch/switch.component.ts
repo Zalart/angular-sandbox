@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-switch',
@@ -6,14 +6,19 @@ import {Component} from '@angular/core';
   styleUrls: ['./switch.component.scss']
 })
 export class SwitchComponent {
-public isSwitched: boolean = false;
+@Input() public isActive: boolean = false;
+@Input() public disabled: boolean = false;
+@Output() switchChange = new EventEmitter<string>();
+
 constructor() {}
 
-  onSwitchChange (value: HTMLInputElement) {
-  this.isSwitched = value.checked;
+  onSwitchChange() {
+  if (!this.disabled) {
+    this.isActive = !this.isActive;
+    this.switchChange.emit(this.statusLabel);
+  }
 }
-
   get statusLabel(): string {
-    return this.isSwitched ? 'ON' : 'OFF';
+    return this.isActive ? 'ON' : 'OFF';
   }
 }

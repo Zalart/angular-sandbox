@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sandbox';
+  onToggleState(status: string){
+    console.log(`Switch toggled to ${status}`)
+  }
 }
