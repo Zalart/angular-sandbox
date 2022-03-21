@@ -1,47 +1,55 @@
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 4rem;
-  height: 2rem;
-  & input {
-    display: none;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .label {
+    font-size: 2rem;
   }
-  & .on + .control:before {
-    transform: translateX(2rem);
-    background-color: white;
-  }
-  & .on + .control {
-    background-color: dodgerblue;
-  }
-  & .control:before {
-    position: absolute;
-    content: "";
-    height: 1.5rem;
-    width: 1.5rem;
-    left: .2rem;
-    bottom: .2rem;
-    background-color: dodgerblue;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-    box-shadow: inset 0 .1rem .3rem rgba(0,0,0,.2);
-  }
-  & .control {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    border: 1px solid lightgray;
-    transition: .4s;
-    border-radius: 1.2rem;
-    box-shadow: inset 0 .1rem .3rem rgba(0,0,0,.2);
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    margin: 1rem;
+    & .control:before {
+      position: absolute;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+      left: .2rem;
+      bottom: .2rem;
+      background-color: dodgerblue;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: inset 0 .1rem .3rem rgba(0,0,0,.2);
+    }
+    & .on.control:before {
+      transform: translateX(2rem);
+      background-color: white;
+    }
+    & .off.control:before {
+      background-color: lightgray;
+    }
+    & .control {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      border: 1px solid lightgray;
+      transition: .4s;
+      border-radius: 1.2rem;
+      box-shadow: inset 0 .1rem .3rem rgba(0,0,0,.2);
+    }
+    & .control.on {
+      background-color: dodgerblue;
+    }
+    & .control.off {
+      background-color: white;
+    }
   }
 }
 
-.text {
-  font-size: 1.5rem;
-  text-align: center;
-}

@@ -3,4 +3,9 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 20px);
+  & .panel-settings {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
 }
