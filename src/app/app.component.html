@@ -1,16 +1,8 @@
   <div class="container">
     <div class="panel-settings">
       <app-switch
-        [isActive]=true
-        [disabled]=false
-        (switchChange)="onToggleState($event)"></app-switch>
-      <app-switch
-        [isActive]=false
-        [disabled]=true
-        (switchChange)="onToggleState($event)"></app-switch>
-      <app-switch
-        [isActive]=true
-        [disabled]=false
-        (switchChange)="onToggleState($event)"></app-switch>
+        [isActive]="isUserActive"
+        [disabled]="isSwitchDisabled"
+        (switchChange)="onToggleState()"></app-switch>
     </div>
 </div>

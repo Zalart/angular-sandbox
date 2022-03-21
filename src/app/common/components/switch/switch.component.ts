@@ -8,17 +8,16 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class SwitchComponent {
 @Input() public isActive: boolean = false;
 @Input() public disabled: boolean = false;
-@Output() switchChange = new EventEmitter<string>();
+@Output() switchChange = new EventEmitter();
 
 constructor() {}
 
   onSwitchChange() {
   if (!this.disabled) {
-    this.isActive = !this.isActive;
-    this.switchChange.emit(this.statusLabel);
+    this.switchChange.emit();
   }
 }
-  get statusLabel(): string {
-    return this.isActive ? 'ON' : 'OFF';
+  get userStatus(): string {
+    return this.isActive ? 'Active': 'Inactive';
   }
 }
