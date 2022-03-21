@@ -1,0 +1,9 @@
+<label class="switch">
+  <input type="checkbox"
+         #checkbox
+         (change)="onSwitchChange(checkbox)"
+         [class.on]="isSwitched"
+  />
+  <span class="control"></span>
+</label>
+<div class="text">{{statusLabel}}</div>
