@@ -1,8 +1,9 @@
 <div class="wrapper">
-  <div class="label">{{userStatus}}</div>
+  <ng-content></ng-content>
 <div class="switch"
     (click)="onSwitchChange()"
   >
   <span class="control" [ngClass]="{on: isActive, off: disabled}"></span>
   </div>
+  <div class="label">{{userStatus}}</div>
 </div>
