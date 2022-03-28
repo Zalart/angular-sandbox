@@ -1,0 +1,10 @@
+<div class="container">
+  <input type="text" (keyup)="onEnter($event)" [value]="queryString"/>
+  <div class="find"></div>
+  <div class="clear" (click)="onClear()"></div>
+  <div class="results" *ngIf="isActive">
+    <div class="item" *ngFor = "let item of searchResult" (click)="onSelect(item.country)">
+      <span>{{item.country.substring(0, queryString.length)}}</span>{{item.country.substring(queryString.length)}}
+    </div>
+   </div>
+</div>
