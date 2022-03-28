@@ -1,308 +1,281 @@
 export class SearchService {
   private dataSet: {country: string}[] = [
     {
-      "country": "Zambia"
+      country: "Zambia"
     },
     {
-      "country": "Trinidad and Tobago"
+      country: "Trinidad and Tobago"
     },
     {
-      "country": "France"
+      country: "France"
     },
     {
-      "country": "Laos"
+      country: "American Samoa"
     },
     {
-      "country": "Lebanon"
+      country: "Norway"
     },
     {
-      "country": "American Samoa"
+      country: "Zimbabwe"
     },
     {
-      "country": "Norway"
+      country: "Turkmenistan"
     },
     {
-      "country": "Zimbabwe"
+      country: "Reunion"
     },
     {
-      "country": "Turkmenistan"
+      country: "French Guiana"
     },
     {
-      "country": "Reunion"
+      country: "Iran"
     },
     {
-      "country": "French Guiana"
+      country: "Wallis and Futuna"
     },
     {
-      "country": "Iran"
+      country: "Ukraine"
     },
     {
-      "country": "Wallis and Futuna"
+      country: "Laos"
     },
     {
-      "country": "Ukraine"
+      country: "Trinidad and Tobago"
     },
     {
-      "country": "Laos"
+      country: "Cape Verde"
     },
     {
-      "country": "Trinidad and Tobago"
+      country: "Heard Island and Mcdonald Islands"
     },
     {
-      "country": "Martinique"
+      country: "Bonaire, Sint Eustatius and Saba"
     },
     {
-      "country": "Cape Verde"
+      country: "Bosnia and Herzegovina"
     },
     {
-      "country": "Heard Island and Mcdonald Islands"
+      country: "Madagascar"
     },
     {
-      "country": "Bonaire, Sint Eustatius and Saba"
+      country: "Saint Martin"
     },
     {
-      "country": "Brazil"
+      country: "Saint Pierre and Miquelon"
     },
     {
-      "country": "Bosnia and Herzegovina"
+      country: "United Kingdom (Great Britain)"
     },
     {
-      "country": "Zambia"
+      country: "Norfolk Island"
     },
     {
-      "country": "Madagascar"
+      country: "Colombia"
     },
     {
-      "country": "Saint Martin"
+      country: "Korea, North"
     },
     {
-      "country": "Saint Pierre and Miquelon"
+      country: "Yemen"
     },
     {
-      "country": "United Kingdom (Great Britain)"
+      country: "Honduras"
     },
     {
-      "country": "Norfolk Island"
+      country: "Romania"
     },
     {
-      "country": "Colombia"
+      country: "Australia"
     },
     {
-      "country": "Korea, North"
+      country: "Belarus"
     },
     {
-      "country": "Yemen"
+      country: "Bulgaria"
     },
     {
-      "country": "Honduras"
+      country: "Sierra Leone"
     },
     {
-      "country": "Romania"
+      country: "El Salvador"
     },
     {
-      "country": "Australia"
+      country: "Congo (Brazzaville)"
     },
     {
-      "country": "Belarus"
+      country: "French Southern Territories"
     },
     {
-      "country": "Bulgaria"
+      country: "Brunei"
     },
     {
-      "country": "Sierra Leone"
+      country: "Djibouti"
     },
     {
-      "country": "El Salvador"
+      country: "Latvia"
     },
     {
-      "country": "Congo (Brazzaville)"
+      country: "Barbados"
     },
     {
-      "country": "French Southern Territories"
+      country: "Senegal"
     },
     {
-      "country": "Brunei"
+      country: "Lebanon"
     },
     {
-      "country": "Djibouti"
+      country: "Dominica"
     },
     {
-      "country": "Latvia"
+      country: "Guatemala"
     },
     {
-      "country": "Barbados"
+      country: "Argentina"
     },
     {
-      "country": "Senegal"
+      country: "Panama"
     },
     {
-      "country": "Lebanon"
+      country: "Tokelau"
     },
     {
-      "country": "Dominica"
+      country: "Peru"
     },
     {
-      "country": "Guatemala"
+      country: "United States Minor Outlying Islands"
     },
     {
-      "country": "Argentina"
+      country: "Austria"
     },
     {
-      "country": "Panama"
+      country: "Isle of Man"
     },
     {
-      "country": "Tokelau"
+      country: "Turks and Caicos Islands"
     },
     {
-      "country": "Peru"
+      country: "Palau"
     },
     {
-      "country": "United States Minor Outlying Islands"
+      country: "Martinique"
     },
     {
-      "country": "Austria"
+      country: "Macedonia"
     },
     {
-      "country": "Isle of Man"
+      country: "Macao"
     },
     {
-      "country": "Bahrain"
+      country: "Ghana"
     },
     {
-      "country": "Turks and Caicos Islands"
+      country: "Italy"
     },
     {
-      "country": "Palau"
+      country: "Congo, the Democratic Republic of the"
     },
     {
-      "country": "Martinique"
+      country: "Niger"
     },
     {
-      "country": "Macedonia"
+      country: "Micronesia"
     },
     {
-      "country": "Macao"
+      country: "Saint Pierre and Miquelon"
     },
     {
-      "country": "Ghana"
+      country: "Samoa"
     },
     {
-      "country": "Italy"
+      country: "Spain"
     },
     {
-      "country": "Congo, the Democratic Republic of the"
+      country: "Cuba"
     },
     {
-      "country": "Niger"
+      country: "Sudan"
     },
     {
-      "country": "Congo (Brazzaville)"
+      country: "Nicaragua"
     },
     {
-      "country": "Micronesia"
+      country: "Guernsey"
     },
     {
-      "country": "Saint Pierre and Miquelon"
+      country: "Tokelau"
     },
     {
-      "country": "Samoa"
+      country: "Swaziland"
     },
     {
-      "country": "Spain"
+      country: "Iceland"
     },
     {
-      "country": "Cuba"
+      country: "Ukraine"
     },
     {
-      "country": "Sudan"
+      country: "Slovakia"
     },
     {
-      "country": "Nicaragua"
+      country: "Slovakia"
     },
     {
-      "country": "Guernsey"
+      country: "Slovenia"
     },
     {
-      "country": "Tokelau"
+      country: "Cambodia"
     },
     {
-      "country": "Swaziland"
+      country: "Saint Martin"
     },
     {
-      "country": "Iceland"
+      country: "United Arab Emirates"
     },
     {
-      "country": "Ukraine"
+      country: "Japan"
     },
     {
-      "country": "Slovakia"
+      country: "Namibia"
     },
     {
-      "country": "Slovakia"
+      country: "Haiti"
     },
     {
-      "country": "Slovenia"
+      country: "Yemen"
     },
     {
-      "country": "Cambodia"
+      country: "Solomon Islands"
     },
     {
-      "country": "Saint Martin"
+      country: "Saint Lucia"
     },
     {
-      "country": "United Arab Emirates"
+      country: "Brazil"
     },
     {
-      "country": "Japan"
+      country: "Pakistan"
     },
     {
-      "country": "Namibia"
+      country: "Montserrat"
     },
     {
-      "country": "Haiti"
+      country: "Serbia"
     },
     {
-      "country": "Yemen"
+      country: "Korea, South"
     },
     {
-      "country": "Solomon Islands"
+      country: "Bahrain"
     },
     {
-      "country": "Saint Lucia"
+      country: "Mayotte"
     },
     {
-      "country": "Brazil"
-    },
-    {
-      "country": "Pakistan"
-    },
-    {
-      "country": "Montserrat"
-    },
-    {
-      "country": "Zambia"
-    },
-    {
-      "country": "Serbia"
-    },
-    {
-      "country": "Korea, South"
-    },
-    {
-      "country": "Korea, North"
-    },
-    {
-      "country": "Bahrain"
-    },
-    {
-      "country": "Mayotte"
-    },
-    {
-      "country": "American Samoa"
+      country: "American Samoa"
     }
   ]
   searchRequest(query: string){
-return this.dataSet.filter((item: {country: string}) => item.country.toLocaleLowerCase().includes(query.toLowerCase()));
+return this.dataSet.filter((item: {country: string}) => item.country.toLocaleLowerCase().indexOf(query.toLowerCase()) === 0);
   }
 
 }
