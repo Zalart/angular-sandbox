@@ -1,8 +1,12 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: calc(100vh - 20px);
+  flex-direction: column;
+  & .search {
+    width: 500px
+  }
   & .panel-settings {
     display: flex;
     flex-direction: column;
