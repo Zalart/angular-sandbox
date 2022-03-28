@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SwitchComponent } from './common/components/switch/switch.component';
 import { SearchfieldComponent } from './common/components/searchfield/searchfield.component';
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import {FormsModule} from "@angular/forms";
   ],
     imports: [
         BrowserModule,
-        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

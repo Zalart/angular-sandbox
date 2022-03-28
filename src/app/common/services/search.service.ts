@@ -275,7 +275,7 @@ export class SearchService {
     }
   ]
   searchRequest(query: string){
-return this.dataSet.filter((item: {country: string}) => item.country.toLocaleLowerCase().indexOf(query.toLowerCase()) === 0);
+return this.dataSet.filter((item: {country: string}) => item.country.toLowerCase().indexOf(query.toLowerCase()) === 0);
   }
 
 }
