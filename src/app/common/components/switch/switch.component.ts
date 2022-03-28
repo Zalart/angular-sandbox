@@ -1,9 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.scss']
+  styleUrls: ['./switch.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class SwitchComponent {
 @Input() public isActive: boolean = false;
