@@ -1,8 +1,13 @@
   <div class="container">
+    <div class="search">
+      <app-searchfield></app-searchfield>
+    </div>
     <div class="panel-settings">
       <app-switch
         [isActive]="isUserActive"
         [disabled]="isSwitchDisabled"
-        (switchChange)="onToggleState()"></app-switch>
+        (switchChange)="onToggleState()">
+        <b class="darkmagenta">User Toggle</b>
+      </app-switch>
     </div>
 </div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <input class="search-input" type="search" [formControl]="searchField"/>
+  <div class="find"></div>
+  <div class="results" *ngIf="isActive">
+    <div class="item" *ngFor = "let item of searchResult" (click)="onSelect(item.country)">
+      {{item.country}}
+    </div>
+   </div>
+</div>
