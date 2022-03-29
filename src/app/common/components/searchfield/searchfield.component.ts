@@ -1,6 +1,7 @@
-import {AfterContentChecked, Component, OnInit} from '@angular/core';
+import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {Country, SearchService} from "../../services/search.service";
 import {FormControl} from "@angular/forms";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-searchfield',
@@ -8,27 +9,33 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./searchfield.component.scss'],
   providers: [SearchService],
 })
-export class SearchFieldComponent implements OnInit {
+export class SearchFieldComponent implements OnInit, OnDestroy {
   public searchField: FormControl = new FormControl();
   public searchResult: Country[] = [];
   public isActive: boolean = false;
+  public subscription: Subscription = new Subscription();
 
   constructor(private searchService: SearchService) {
   }
 
   ngOnInit () {
-    this.searchField.valueChanges.subscribe(value => {
-      this.isActive = Boolean(value);
-      value
-       ? this.searchService.searchRequest(value)
-          .then((res: Country[]) => {
-            this.searchResult = res
-            console.log(res)
-          })
-      : this.searchResult = []
+    this.subscription = this.searchField.valueChanges.subscribe(value => {
+      this.isActive = !!value;
+      if (value) {
+           this.searchService.searchRequest(value)
+            .then((res: Country[]) => {
+              this.searchResult = res
+            })
+      } else {
+        this.searchResult = []
+      }
     });
   }
-onSelect(country: string): void {
+ngOnDestroy() {
+    this.subscription.unsubscribe();
+}
+
+  onSelect(country: string): void {
     this.searchField.setValue(country);
     this.searchResult = [];
     this.isActive = !this.isActive;
