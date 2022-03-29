@@ -8,7 +8,7 @@ import {TimeInterval} from "rxjs";
   styleUrls: ['./searchfield.component.scss'],
   providers: [SearchService],
 })
-export class SearchfieldComponent implements AfterContentChecked{
+export class SearchFieldComponent implements AfterContentChecked{
   public queryString = '';
   public searchResult: {country: string}[] = [];
   public isActive: boolean = false;
