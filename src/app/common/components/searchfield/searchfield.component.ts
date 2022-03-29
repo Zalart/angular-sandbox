@@ -1,7 +1,7 @@
 import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {Country, SearchService} from "../../services/search.service";
 import {FormControl} from "@angular/forms";
-import {Subscription} from "rxjs";
+import {debounceTime, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-searchfield',
@@ -19,7 +19,7 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit () {
-    this.subscription = this.searchField.valueChanges.subscribe(value => {
+    this.subscription = this.searchField.valueChanges.pipe(debounceTime(1000)).subscribe(value => {
       this.isActive = !!value;
       if (value) {
            this.searchService.searchRequest(value)
