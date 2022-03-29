@@ -3,7 +3,7 @@
   <div class="find"></div>
   <div class="results" *ngIf="isActive">
     <div class="item" *ngFor = "let item of searchResult" (click)="onSelect(item.country)">
-      <span>{{item.country.substring(0, this.searchField.value.length)}}</span>{{item.country.substring(this.searchField.value.length)}}
+      {{item.country}}
     </div>
    </div>
 </div>

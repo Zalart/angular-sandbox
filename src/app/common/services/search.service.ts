@@ -277,12 +277,11 @@ export class SearchService {
     }
   ]
   delay(time: number) {
-    return new Promise((resolve, reject)=> {
-      setTimeout(resolve, time)
-    })
+    return new Promise(resolve => setTimeout(resolve, time))
   }
-
   searchRequest(query: string) {
-      return this.dataSet.filter((item: Country) => item.country.toLowerCase().indexOf(query.toLowerCase()) === 0);
+      return this.delay(1000)
+        .then(() => this.dataSet.filter((item: Country) => item.country.toLowerCase().indexOf(query.toLowerCase()) === 0)
+      );
   }
 }

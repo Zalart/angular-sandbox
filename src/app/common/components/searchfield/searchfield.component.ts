@@ -16,10 +16,16 @@ export class SearchFieldComponent implements OnInit {
   constructor(private searchService: SearchService) {
   }
 
-  ngOnInit() {
+  ngOnInit () {
     this.searchField.valueChanges.subscribe(value => {
       this.isActive = Boolean(value);
-      this.searchResult = this.searchService.searchRequest(value);
+      value
+       ? this.searchService.searchRequest(value)
+          .then((res: Country[]) => {
+            this.searchResult = res
+            console.log(res)
+          })
+      : this.searchResult = []
     });
   }
 onSelect(country: string): void {
