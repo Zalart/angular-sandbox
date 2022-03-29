@@ -1,5 +1,7 @@
+export type Country =  {country: string;}
+
 export class SearchService {
-  private dataSet: {country: string}[] = [
+  private dataSet: Country[] = [
     {
       country: "Zambia"
     },
@@ -274,8 +276,13 @@ export class SearchService {
       country: "American Samoa"
     }
   ]
-  searchRequest(query: string){
-return this.dataSet.filter((item: {country: string}) => item.country.toLowerCase().indexOf(query.toLowerCase()) === 0);
+  delay(time: number) {
+    return new Promise((resolve, reject)=> {
+      setTimeout(resolve, time)
+    })
   }
 
+  searchRequest(query: string) {
+      return this.dataSet.filter((item: Country) => item.country.toLowerCase().indexOf(query.toLowerCase()) === 0);
+  }
 }

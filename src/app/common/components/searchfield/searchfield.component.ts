@@ -1,6 +1,6 @@
-import {AfterContentChecked, Component, Input, OnChanges, OnInit} from '@angular/core';
-import {SearchService} from "../../services/search.service";
-import {TimeInterval} from "rxjs";
+import {AfterContentChecked, Component, OnInit} from '@angular/core';
+import {Country, SearchService} from "../../services/search.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-searchfield',
@@ -8,28 +8,23 @@ import {TimeInterval} from "rxjs";
   styleUrls: ['./searchfield.component.scss'],
   providers: [SearchService],
 })
-export class SearchFieldComponent implements AfterContentChecked{
-  public queryString = '';
-  public searchResult: {country: string}[] = [];
+export class SearchFieldComponent implements OnInit {
+  public searchField: FormControl = new FormControl();
+  public searchResult: Country[] = [];
   public isActive: boolean = false;
 
-  constructor(private searchService: SearchService ) { }
-ngAfterContentChecked(): void {
-  this.isActive = Boolean(this.queryString && this.searchResult.length > 0);
-  this.searchResult = this.searchService.searchRequest(this.queryString);
-}
-onEnter(event: any): void{
-    setTimeout( ()=> {
-    this.queryString = event.target.value;
-  },1000)
-}
+  constructor(private searchService: SearchService) {
+  }
+
+  ngOnInit() {
+    this.searchField.valueChanges.subscribe(value => {
+      this.isActive = Boolean(value);
+      this.searchResult = this.searchService.searchRequest(value);
+    });
+  }
 onSelect(country: string): void {
-    this.queryString = country;
+    this.searchField.setValue(country);
     this.searchResult = [];
     this.isActive = !this.isActive;
 }
-onClear(): void {
-    this.queryString = '';
-}
-
 }

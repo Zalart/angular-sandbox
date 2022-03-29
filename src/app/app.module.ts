@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SwitchComponent } from './common/components/switch/switch.component';
 import { SearchFieldComponent } from './common/components/searchfield/searchfield.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -11,9 +12,11 @@ import { SearchFieldComponent } from './common/components/searchfield/searchfiel
     SwitchComponent,
     SearchFieldComponent,
   ],
-    imports: [
-        BrowserModule,
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
