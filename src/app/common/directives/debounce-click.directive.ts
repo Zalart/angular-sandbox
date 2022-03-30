@@ -1,5 +1,5 @@
 import {Directive, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
-import {Subject} from "rxjs";
+import {debounceTime, Subject} from "rxjs";
 
 @Directive({
   selector: '[appDebounceClick]'
@@ -10,7 +10,7 @@ export class DebounceClickDirective implements OnInit {
   observable = new Subject();
 
   constructor() {
-    this.observable.subscribe((click) => this.debounceClick.emit(click));
+    this.observable.pipe(debounceTime(1000)).subscribe((click) => this.debounceClick.emit(click));
   }
 
   ngOnInit() {
