@@ -6,7 +6,7 @@ import { SwitchComponent } from './common/components/switch/switch.component';
 import { SearchFieldComponent } from './common/components/searchfield/searchfield.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DebounceClickDirective } from './common/directives/debounce-click.directive';
-import { ClickLogComponent } from './click-log/click-log.component';
+import { ClickLogComponent } from './common/components/click-log/click-log.component';
 
 @NgModule({
   declarations: [
