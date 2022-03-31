@@ -11,8 +11,6 @@ export class SwitchComponent {
 @Input() public disabled: boolean = false;
 @Output() switchChange = new EventEmitter();
 
-constructor() {}
-
   onSwitchChange() {
   if (!this.disabled) {
     this.switchChange.emit();
