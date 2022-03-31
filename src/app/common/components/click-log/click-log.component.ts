@@ -5,12 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './click-log.component.html',
   styleUrls: ['./click-log.component.scss']
 })
-export class ClickLogComponent implements OnInit {
+export class ClickLogComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   log(): void {
     console.log('Click is logged');
   }
