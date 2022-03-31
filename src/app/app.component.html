@@ -1,6 +1,9 @@
   <div class="container">
     <div class="search">
       <app-searchfield></app-searchfield>
+      <div  *shFor="5; index as i">
+      <span>Line number: {{ i }} </span>
+    </div>
     </div>
     <div class="panel-settings">
       <app-switch
